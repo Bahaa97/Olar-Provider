@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginBottom="8dp"
+                android:padding="@dimen/dp_2"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/arrow_left" />
+
+            <TextView
+                android:id="@+id/tvTittle"
+                style="@style/normaltxt_22sp_medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_24"
+                android:layout_marginEnd="8dp"
+                android:gravity="start"
+                android:textColor="@color/black"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+                app:layout_constraintEnd_toStartOf="@+id/ivSpinner"
+                app:layout_constraintStart_toEndOf="@+id/ivBack"
+                app:layout_constraintTop_toTopOf="@+id/ivBack" />
+
+            <ImageView
+                android:id="@+id/ivSpinner"
+                android:layout_width="50dp"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginEnd="24dp"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/tvTittle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvTittle" />
+
+            <TextView
+                android:id="@+id/tvEdit"
+                style="@style/normaltxt_14sp_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_24"
+                android:background="@drawable/rounded_black_10"
+                android:gravity="center"
+                android:text="@string/edit"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:minHeight="@dimen/_25sdp"
+                android:minWidth="@dimen/_64sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvTittle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvTittle" />
+
+            <TextView
+                android:id="@+id/tvReviews"
+                style="@style/normaltxt_14sp_Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_24"
+                android:visibility="invisible"
+                android:textColor="@color/dark_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivBack" />
+            <!-- <androidx.constraintlayout.widget.ConstraintLayout
+                 android:id="@+id/constraintLayout32"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginEnd="16dp"
+                 android:visibility="gone"
+                 app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 app:layout_constraintStart_toEndOf="@+id/tvTittle"
+                 app:layout_constraintTop_toTopOf="@+id/ivBack">
+
+                 <ImageView
+                     android:id="@+id/imageView20"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintTop_toTopOf="parent" />
+
+                 <TextView
+                     android:id="@+id/tvSetLocation"
+                     style="@style/normaltxt_12sp_Regular"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_marginEnd="8dp"
+                     android:textColor="@color/white"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toStartOf="@+id/imageView20"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toTopOf="@+id/imageView20" />
+             </androidx.constraintlayout.widget.ConstraintLayout>-->
+            <ImageView
+                android:id="@+id/btnNotificationMore"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/ic_notification_more"
+                android:padding="@dimen/_2sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivBack" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

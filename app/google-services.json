@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "516031932936",
+    "project_id": "olar-7a69b",
+    "storage_bucket": "olar-7a69b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516031932936:android:db30c39dd3fa8b077bbfbd",
+        "android_client_info": {
+          "package_name": "com.apps.olardriver"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAISDWKoTi5fy6QZnxYg7xe6SwpQbJdDME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516031932936:android:b06cef1f8f5a4ede7bbfbd",
+        "android_client_info": {
+          "package_name": "com.olar.provider"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAISDWKoTi5fy6QZnxYg7xe6SwpQbJdDME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

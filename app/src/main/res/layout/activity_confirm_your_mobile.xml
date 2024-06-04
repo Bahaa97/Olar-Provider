@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.olar.ui.auth.AuthViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg"
+        tools:context=".ui.auth.ConfrimYourMobile.ConfirmYourMobileActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_32"
+                android:padding="@dimen/dp_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/arrow_left"
+                app:tint="@color/blackWhite" />
+
+            <ImageView
+                android:id="@+id/imageView13"
+                android:layout_width="112dp"
+                android:layout_height="34dp"
+                android:src="@drawable/ic_logo_otp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivBack" />
+
+            <View
+                app:layout_constraintTop_toBottomOf="@id/imageView13"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/f3f4f5"/>
+
+            <TextView
+                android:id="@+id/textView8"
+                style="@style/normaltxt_30sp_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:textColor="@color/blackWhite"
+                android:text="@string/confirm_your_mobile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivBack" />
+
+            <TextView
+                android:id="@+id/textView12"
+                style="@style/normaltxt_16sp_Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/enter_the_code_we_ve_sent_to"
+                android:textColor="@color/dark_gray"
+                app:layout_constraintEnd_toEndOf="@+id/textView8"
+                app:layout_constraintStart_toStartOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+
+            <LinearLayout
+                android:id="@+id/containerPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/textView12"
+                app:layout_constraintStart_toStartOf="@+id/textView12"
+                app:layout_constraintTop_toBottomOf="@+id/textView12">
+
+                <TextView
+                    android:id="@+id/txtPhoneCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="@font/medium"
+                    android:textColor="@color/blackWhite"
+                    android:textSize="18sp"
+                    tools:text="(123)"
+                    app:layout_constraintEnd_toEndOf="@+id/textView12"
+                    app:layout_constraintStart_toStartOf="@+id/textView12"
+                    app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+                <TextView
+                    android:id="@+id/txtPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="@font/medium"
+                    android:textColor="@color/blackWhite"
+                    android:textSize="18sp"
+                    tools:text="121212112"
+                    app:drawableEndCompat="@drawable/ic_edit_phone"
+                    app:layout_constraintEnd_toEndOf="@+id/textView12"
+                    app:layout_constraintStart_toStartOf="@+id/textView12"
+                    app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+
+            </LinearLayout>
+
+            <com.alimuzaffar.lib.pin.PinEntryEditText
+                android:id="@+id/pinEdittext"
+                setFont="@{`r`}"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:autofillHints="smsOTPCode"
+                android:cursorVisible="false"
+                android:imeOptions="actionSend"
+                android:importantForAutofill="yes"
+                android:inputType="number"
+                android:layoutDirection="ltr"
+                android:maxLength="5"
+                android:padding="@dimen/_2sdp"
+                android:text="@={viewModel.viewCodeLiveData}"
+                android:textColor="@color/blackWhite"
+                android:textColorHint="@color/blackWhite"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/containerPhone"
+                app:pinBackgroundDrawable="@drawable/otp_edit_txt_dsgn"
+                app:pinBackgroundIsSquare="true"
+                app:pinCharacterSpacing="@dimen/_3sdp"
+                app:pinLineColors="#08D4A1"
+                app:pinLineStrokeSelected="@dimen/_2sdp"
+                app:pinTextBottomPadding="@dimen/_16sdp"
+                tools:text="33" />
+
+
+
+            <LinearLayout
+                android:id="@+id/continerResend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="@+id/pinEdittext"
+                app:layout_constraintStart_toStartOf="@+id/pinEdittext"
+                app:layout_constraintTop_toBottomOf="@+id/btnConfirm" >
+
+                <TextView
+                    android:id="@+id/tvResend"
+                    style="@style/normaltxt_15sp_Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/haven_t_received_a_code_reload"
+                    app:layout_constraintEnd_toEndOf="@+id/pinEdittext"
+                    app:layout_constraintStart_toStartOf="@+id/pinEdittext"
+                    app:layout_constraintTop_toBottomOf="@+id/btnConfirm" />
+                <TextView
+                    style="@style/normaltxt_15sp_Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/resend"
+                    android:textColor="@color/blue"
+                    app:setUnderLine="@{true}"
+                    app:layout_constraintEnd_toEndOf="@+id/pinEdittext"
+                    app:layout_constraintStart_toStartOf="@+id/pinEdittext"
+                    app:layout_constraintTop_toBottomOf="@+id/btnConfirm" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layResendCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/continerResend">
+
+                <TextView
+                    android:id="@+id/tvVerifyTimerTitle"
+                    setFont="@{`r`}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/code_expire_at"
+                    android:textColor="@color/blackWhite"
+                    android:textSize="@dimen/_12ssp"
+                    tools:fontFamily="@font/regular" />
+
+                <TextView
+                    android:id="@+id/tvVerifyTimerAction"
+                    setFont="@{`r`}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    tools:fontFamily="@font/regular"
+                    tools:text="00:00" />
+
+            </LinearLayout>
+
+            <include
+                android:id="@+id/btnConfirm"
+                layout="@layout/common_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pinEdittext" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

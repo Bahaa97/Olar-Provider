@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera.any" />
+    <!--
+ Required only if your app needs to access videos
+         that other apps created.
+    -->
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".app.Application"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.RushRooms"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ui.home.RecyclerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.recycleing.RecyclingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.auth.Signup.SignupActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/mysoft" />
+        <activity
+            android:name=".ui.auth.ConfrimYourMobile.ConfirmYourMobileActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/mysoft" />
+        <activity
+            android:name=".ui.auth.ResetPassword.Successfully.SuccessfullyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/mysoft" />
+        <activity
+            android:name=".ui.auth.ResetPassword.ResetPasswordActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/mysoft" />
+        <activity
+            android:name=".ui.auth.Login.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/mysoft" />
+        <activity
+            android:name=".ui.auth.walkThrough.TourActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/mysoft" />
+        <activity
+            android:name=".ui.auth.Splash.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:pathPrefix="/"
+                    android:scheme="http" />
+                <data
+                    android:host="rushroomsapp.page.link"
+                    android:pathPrefix="/"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".FCM.MyFirebaseService"
+            android:exported="false"
+            tools:node="merge">
+            <intent-filter>
+                <action
+                    android:name="com.google.firebase.MESSAGING_EVENT"
+                    android:exported="false" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".ui.appUtils.HtmlActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.setting.SettingActivity"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/black" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.huawei.hms.client.channel.androidMarket"
+            android:value="false" />
+        <meta-data
+            android:name="push_kit_auto_init_enabled"
+            android:value="true" />
+    </application>
+
+</manifest>

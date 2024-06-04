@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.olar.ui.home.ui.home.HomeFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_chat"
+        android:name="com.olar.ui.home.ui.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
+
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="com.olar.ui.home.ui.map.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
+
+    <fragment
+        android:id="@+id/navigation_booking"
+        android:name="com.olar.ui.home.ui.Booking.BookingFragment"
+        android:label="fragment_more"
+        tools:layout="@layout/fragment_booking" />
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.olar.ui.home.ui.more.MoreFragment"
+        android:label="SettingFragment"
+        tools:layout="@layout/fragment_more" />
+
+
+</navigation>
